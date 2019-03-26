@@ -1,5 +1,7 @@
 exports.config = {
-  //   path: "/wd/hub",
+  hostname: "standalone-chrome-debug",
+  // port: 4004,
+  // path: "/wd/hub",
   //
   // ====================
   // Runner Configuration
@@ -53,11 +55,18 @@ exports.config = {
       maxInstances: 1,
       //
       //   browserName: "firefox",
-      browserName: "chrome"
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
+      browserName: "chrome",
+      "goog:chromeOptions": {
+        // debuggerAddress: "localhost:9222",
+        args: [
+          // "--remote-debugging-port=9222"
+          // "--remote-debugging-host=standalone-chrome-debug"
+        ]
+      }
     }
   ],
   //
@@ -107,7 +116,10 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["selenium-standalone", "devtools"],
+  services: [
+    // "selenium-standalone",
+    // "devtools"
+  ],
   //
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -131,7 +143,7 @@ exports.config = {
   mochaOpts: {
     ui: "bdd",
     timeout: 60000
-  }
+  },
   //
   // =====
   // Hooks
@@ -145,8 +157,9 @@ exports.config = {
    * @param {Object} config wdio configuration object
    * @param {Array.<Object>} capabilities list of capabilities details
    */
-  // onPrepare: function (config, capabilities) {
-  // },
+  onPrepare: function(config, capabilities) {
+    console.log("onPrepare");
+  },
   /**
    * Gets executed just before initialising the webdriver session and test framework. It allows you
    * to manipulate configurations depending on the capability or spec.
@@ -154,36 +167,41 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  // beforeSession: function (config, capabilities, specs) {
-  // },
+  beforeSession: function(config, capabilities, specs) {
+    console.log("beforeSession");
+  },
   /**
    * Gets executed before test execution begins. At this point you can access to all global
    * variables like `browser`. It is the perfect place to define custom commands.
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  // before: function (capabilities, specs) {
-  // },
+  before: function(capabilities, specs) {
+    console.log("before");
+  },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name
    * @param {Array} args arguments that command would receive
    */
-  // beforeCommand: function (commandName, args) {
-  // },
+  beforeCommand: function(commandName, args) {
+    console.log("beforeCommand");
+  },
 
   /**
    * Hook that gets executed before the suite starts
    * @param {Object} suite suite details
    */
-  // beforeSuite: function (suite) {
-  // },
+  beforeSuite: function(suite) {
+    console.log("beforeSuite");
+  },
   /**
    * Function to be executed before a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
    * @param {Object} test test details
    */
-  // beforeTest: function (test) {
-  // },
+  beforeTest: function(test) {
+    console.log("beforeTest");
+  }
   /**
    * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
    * beforeEach in Mocha)

@@ -1,0 +1,19 @@
+version: "3"
+services:
+  app:
+    build: .
+    command: npm start
+    volumes:
+      - ./:/var/opt
+    depends_on:
+      - standalone-chrome-debug
+  standalone-chrome-debug:
+    ports:
+      - "4444:4444"
+      - "5900:5900"
+      - "9222:9222"
+    volumes:
+      - "/dev/shm:/dev/shm"
+    # environment:
+    #   DBUS_SESSION_BUS_ADDRESS: /dev/null
+    image: selenium/standalone-chrome-debug
