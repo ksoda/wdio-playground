@@ -11,6 +11,11 @@ services:
     container_name: selenium-hub
     ports:
       - "4444:4444"
+    healthcheck:
+      test: ["CMD", "/opt/bin/check-grid.sh"]
+      interval: 15s
+      timeout: 30s
+      retries: 5
   chrome:
     image: selenium/node-chrome:3
     volumes:
