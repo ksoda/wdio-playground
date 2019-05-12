@@ -1,5 +1,5 @@
 exports.config = {
-  hostname: "standalone-chrome",
+  hostname: "selenium-hub",
   //
   // ====================
   // Runner Configuration

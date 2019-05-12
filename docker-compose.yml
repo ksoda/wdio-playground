@@ -5,7 +5,7 @@ services:
     volumes:
       - .:/usr/src/app
     depends_on:
-      - standalone-chrome
+      - chrome
   selenium-hub:
     image: selenium/hub:3.141.59-neon
     container_name: selenium-hub
