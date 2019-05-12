@@ -1,2 +1,5 @@
 # wdio
-docker network create grid
+
+```sh
+docker-compose up app
+```
