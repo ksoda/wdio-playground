@@ -12,5 +12,5 @@
     },
     "types": ["node", "@wdio/sync", "@wdio/mocha-framework"]
   },
-  "include": ["./src/**/*.ts"]
+  "include": ["test"]
 }
