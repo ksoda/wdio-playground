@@ -1,4 +1,4 @@
-import { strict as assert } from 'assert';
+import { strict as assert } from "assert";
 
 describe("webdriver.io page", () => {
   it("should have the right title", () => {
