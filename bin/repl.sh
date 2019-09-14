@@ -1,2 +1,3 @@
 #!/bin/bash
-docker-compose run --rm app npx wdio repl chrome -h selenium-hub
+docker-compose run --rm app npx wdio repl ${1:-chrome} -h selenium-hub
+

@@ -1,0 +1,10 @@
+{
+  "capabilities": [
+    {
+      "browserName": "MicrosoftEdge",
+      "platform": "WIN10",
+      "maxInstances": 1
+    }
+  ],
+  "hub": "http://selenium-hub:4444"
+}

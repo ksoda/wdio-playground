@@ -1,0 +1,1 @@
+START "node" java -jar selenium-server-standalone.jar -role node -nodeConfig node.json
