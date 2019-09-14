@@ -28,4 +28,4 @@ port: 4444
 
 1. `docker run --rm -p 4444:4444 selenium/hub:3`
 2. Execute `start.bat`
-3. `npx wdio repl MicrosoftEdge -h selenium-hub`
+3. `npx wdio repl MicrosoftEdge`
