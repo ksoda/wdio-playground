@@ -56,6 +56,9 @@ const config: WebdriverIO.Config = {
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
+    },
+    {
+      browserName: "MicrosoftEdge"
     }
   ],
   //
@@ -251,4 +254,4 @@ const config: WebdriverIO.Config = {
   //onReload: function(oldSessionId, newSessionId) {
   //}
 };
-export { config }
+export { config };
