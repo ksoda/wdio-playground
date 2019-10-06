@@ -1,7 +1,7 @@
 # wdio
 
 ```sh
-docker-compose up app
+docker-compose run app
 ```
 
 # Debug
