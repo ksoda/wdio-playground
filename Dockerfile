@@ -1,6 +1,6 @@
 
 FROM selenium/hub:3 AS hub
-FROM node:10
+FROM node:12
 WORKDIR /usr/src/app
 COPY --from=hub /opt/bin/check-grid.sh /usr/src/check-grid.sh
 RUN apt-get -qqy update \
