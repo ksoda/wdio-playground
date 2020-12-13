@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ksoda/wdio-playground#readme",
   "devDependencies": {
+    "@wdio/allure-reporter": "^6.10.6",
     "@wdio/cli": "^6.10.9",
     "@wdio/cucumber-framework": "^6.10.6",
     "@wdio/local-runner": "^6.10.7",
